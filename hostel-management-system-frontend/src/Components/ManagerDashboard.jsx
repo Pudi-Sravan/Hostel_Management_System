@@ -16,6 +16,11 @@ const ManagerDashboard = () => {
       .then((response) => response.json())
       .then((data) => setStudents(data))
       .catch((error) => console.error('Error fetching data:', error));
+
+      fetch('http://localhost:3000/api/manager/rooms')
+      .then((response) => response.json())
+      .then((data) => setRooms(data))
+      .catch((error) => console.error('Error fetching rooms:', error));  
   }, []);
 
   // Handle Room Allocation
